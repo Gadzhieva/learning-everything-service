@@ -1,0 +1,16 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: learning-service
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka} #this one is default, I might not specify it
+    register-with-eureka: true
+    fetch-registry: false
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+    hostname: localhost
